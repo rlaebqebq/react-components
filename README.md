@@ -1,7 +1,9 @@
-# wanted_pre_onboarding
-원티드 프리온보딩 코스
+# 원티드 프리온보딩 코스 [![Netlify Status](https://api.netlify.com/api/v1/badges/54edafd8-b580-4e5a-b8d2-fea6f8aaaaa2/deploy-status)](https://app.netlify.com/sites/rlaebqebq-wanted-pre-onboarding/deploys)
+
+'원티드 프리온보딩 코스' 선발과제   
+
 ## Toggle.js
-<img src="https://user-images.githubusercontent.com/50236673/164494597-30da1434-628d-4cd9-8a64-c78d71dffc86.gif" width="50%" height="50%">   
+<img src="https://user-images.githubusercontent.com/50236673/164514914-d73feba8-ff90-4b70-8186-48bae248b17e.gif" width="50%" height="50%">   
 
 - [x] 핵심 요소 : 버튼을 누를 때마다 선택된 항목이 변한다.
 - [x] 부가 요소 : 슬라이드 애니메이션
@@ -27,7 +29,7 @@
   3.2 :after은 content `기본`로 변경. 왼쪽으로 이동시킴. 글자색을 #9e9e9e로 변경. 배경색은 #fff으로 변경.
 
 ## Tab.js
-<img src="https://user-images.githubusercontent.com/50236673/164494565-494a9e6c-5232-4606-b38c-9c629459a1c9.gif" width="50%" height="50%"> 
+<img src="https://user-images.githubusercontent.com/50236673/164514912-34169e84-847e-4821-a642-d88c6bd88e13.gif" width="50%" height="50%"> 
 
 - [x] 핵심 요소 : 버튼을 누를 때마다 선택된 탭이 변한다.
 - [x] 부가 요소 : 슬라이드 애니메이션
@@ -44,7 +46,7 @@
 3. 탭을 선택하면 선택한 탭 번호를 바탕으로 선택한 탭의 글자색을 변경하고 하단 장식요소를 옮김.
 
 ## slider.js
-<img src="https://user-images.githubusercontent.com/50236673/164494579-b2c8a3f4-d76b-433a-a18f-50111d21d72a.gif" width="50%" height="50%"> 
+<img src="https://user-images.githubusercontent.com/50236673/164514903-861e1986-a000-49fe-87c1-e1102fab47c8.gif" width="50%" height="50%"> 
 
 - [x] 핵심 요소 : 슬라이더를 움직이면 상단의 값이 자동으로 변한다.
 - [x] 부가 요소 : 하단 버튼과 미려한 픽셀 매칭
@@ -69,7 +71,7 @@
 * 1% 지점은 언제나 불이 켜져있기 때문에 반복문에서 제외시키고 항상 불이 켜져있도록 코드 변경해 작성함.
 
 ## input.js
-<img src="https://user-images.githubusercontent.com/50236673/164494478-212aca89-0432-4cf7-b705-0295d9b22ed1.gif" width="50%" height="50%"> 
+<img src="https://user-images.githubusercontent.com/50236673/164514889-5ee69745-9c09-483b-904e-1b0d8f33885b.gif" width="50%" height="50%"> 
 
 - [x] 핵심 요소 : 인풋창에 이메일과 비밀번호 입력이 가능하다
 - [x] 부가 요소 : 이메일 형식에 맞을 경우 자동으로 체크 표시
@@ -100,7 +102,7 @@
 * checkEmailState를 객체로 변경 후, visible 추가해 해결함.
 
 ## Dropdown.js
-<img src="https://user-images.githubusercontent.com/50236673/164494413-a9726995-6036-4d50-b56e-f21f3ef62ad0.gif" width="50%" height="50%"> 
+<img src="https://user-images.githubusercontent.com/50236673/164514876-a185bf32-62d6-4ac9-9047-37b0ca817833.gif" width="50%" height="50%"> 
 
 - [x] 핵심 요소 : 드롭다운을 누르면 선택 창이 펼쳐지고, 아무거나 골라 클릭하면 선택된 항목으로 변경됨
 - [x] 부가 요소 : 키워드 필터 기능 구현
