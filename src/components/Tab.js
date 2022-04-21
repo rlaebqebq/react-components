@@ -11,7 +11,7 @@ export default function Tab() {
   const tabList =
     arr.map(tab =>
       <div key={tab.id} className='tab'>
-        <input type='radio' name='tabName' value={tab.id} id={`tab${tab.id}`} defaultChecked={`${tab.id}` == 1 ? true : false} />
+        <input type='radio' name='tabName' value={tab.id} id={`tab${tab.id}`} defaultChecked={`${tab.id}` === 1 ? true : false} />
         <label htmlFor={`tab${tab.id}`}>{tab.name}</label>
       </div>
     )

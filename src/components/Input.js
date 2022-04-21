@@ -11,9 +11,9 @@ export default function Input() {
     function checkEmail(e) {
         setEmailState(() => {
             var email = e.target.value;
-            if (email.length != 0) {
+            if (email.length !== 0) {
                 var regExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
-                if (regExp.test(email) == true) {
+                if (regExp.test(email) === true) {
                     return { state: true, visible: false };
                 }
                 else {
@@ -26,7 +26,7 @@ export default function Input() {
 
     function checkPassword(e){
         setPasswordState(() => {
-            if (checkPasswordState.visible == false) {
+            if (checkPasswordState.visible === false) {
                 return { type: 'text', visible: true };
             }
             return { type: 'password', visible: false };

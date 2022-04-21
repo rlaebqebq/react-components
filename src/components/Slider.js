@@ -10,8 +10,8 @@ export default function Slider() {
         ulli[i].classList.add('active');
     }
 
-    for (var i = 0; i < ulli.length - sliderIndx; i++) {
-        ulli[ulli.length - i - 1].classList.remove('active');
+    for (var j = 0; j < ulli.length - sliderIndx; j++) {
+        ulli[ulli.length - j - 1].classList.remove('active');
     }
 
     const arr = [1, 25, 50, 75, 100]
