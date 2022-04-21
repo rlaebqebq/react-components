@@ -12,7 +12,7 @@ export default function Input() {
         setEmailState(() => {
             var email = e.target.value;
             if (email.length !== 0) {
-                var regExp = /^[0-9a-zA-Z]([-_]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+                var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
                 if (regExp.test(email) === true) {
                     return { state: true, visible: false };
                 }
