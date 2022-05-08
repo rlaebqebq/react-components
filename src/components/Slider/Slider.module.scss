@@ -1,0 +1,116 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/position';
+
+/* Slider.js */
+.sliderNum {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+  line-height: 50px;
+  text-align: right;
+  background-color: colors.$GRAYE;
+  border: 1px solid colors.$GRAYD;
+  border-radius: 5px;
+
+  span {
+    font-weight: 700;
+    color: colors.$GRAY3;
+  }
+
+  span + span {
+    padding: 0 20px;
+    font-size: 0.8em;
+    color: colors.$GRAYA;
+  }
+}
+
+input[type='range'] {
+  -webkit-appearance: none;
+  position: relative;
+  top: -7px;
+  left: 7px;
+  width: calc(100% - 15px);
+  height: 6px;
+  background: colors.$GRAYA;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+input[type='range']:focus {
+  outline: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 25px;
+  height: 25px;
+  background: colors.$MINT;
+  border: 3px solid colors.$WHITE;
+  border-radius: 50%;
+  box-shadow: 0 3px 3px colors.$GRAYE;
+  cursor: pointer;
+}
+
+input[type='range']::-moz-range-thumb {
+  -webkit-appearance: none;
+  width: 25px;
+  height: 25px;
+  background: colors.$MINT;
+  border: 3px solid colors.$WHITE;
+  border-radius: 50%;
+  box-shadow: 0 3px 3px colors.$GRAYE;
+  cursor: pointer;
+}
+
+.sliderUl {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  top: -20px;
+  z-index: -50;
+}
+
+ul li {
+  list-style: none;
+  background-color: colors.$GRAYA;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+    &.active {
+      background-color: colors.$MINT;
+    }
+}
+
+ul li.active {
+  background-color: colors.$MINT;
+  border: 1px solid red;
+}
+
+.buttonSetVolume {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 40px;
+    padding: 3px;
+    font-size: 0.8em;
+    color: colors.$GRAYA;
+    cursor: pointer;
+    background-color: colors.$GRAYE;
+    border: none;
+    border-radius: 5px;
+    transition: 0.5s;
+
+    &:hover {
+      color: colors.$WHITE;
+      background-color: colors.$MINT;
+    }
+  }
+}

@@ -1,10 +1,10 @@
 import styles from './Routes.module.scss'
-import TodoList from './TodoList'
+import WantedPreOnboarding from './WantedPreOnboarding'
 
 function App() {
   return (
     <div className={styles.app}>
-      <TodoList />
+      <WantedPreOnboarding />
     </div>
   )
 }

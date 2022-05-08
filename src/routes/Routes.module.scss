@@ -1,11 +1,16 @@
 @use '/src/styles/constants/colors';
 
 .app {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #dee3f9;
+  background-color: colors.$WHITE;
+}
+
+/* .container */
+.container {
+  position: relative;
+  width: 360px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 100px 0;
 }
 
 .appLogo {

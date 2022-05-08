@@ -1,0 +1,68 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/mixins/position';
+
+/* Toggle.js */
+input[type='checkbox'] {
+  display: none;
+  height: 36px;
+
+  & ~ .toggleLabel .toggleCheck::before {
+    left: 0;
+    content: attr(data-unchecked);
+  }
+
+  & ~ .toggleLabel .toggleCheck::after {
+    left: 180px;
+    content: attr(data-checked);
+  }
+
+  &:checked ~ .toggleLabel .toggleCheck::before {
+    left: 180px;
+    content: attr(data-checked);
+  }
+
+  &:checked ~ .toggleLabel .toggleCheck::after {
+    left: 0;
+    content: attr(data-unchecked);
+  }
+}
+
+.toggleLabel {
+  @include flexbox.flexbox(center center);
+  position: relative;
+
+  .toggleCheck {
+    position: relative;
+    top: 2px;
+    box-sizing: content-box;
+    flex: 0 0 360px;
+    height: 36px;
+    font-weight: 700;
+    color: colors.$GRAY6;
+    text-align: center;
+    cursor: pointer;
+    background: colors.$GRAYD;
+    border: 2px solid colors.$GRAYD;
+    border-radius: 40px;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      width: 180px;
+      line-height: 36px;
+    }
+
+    &::after {
+      color: colors.$GRAYA;
+    }
+
+    &::before {
+      z-index: 5;
+      background: colors.$WHITE;
+      border-radius: 40px;
+      transition: all ease 0.3s;
+    }
+  }
+}

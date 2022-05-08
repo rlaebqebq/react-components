@@ -1,2 +1,5 @@
 export { ReactComponent as LogoImage } from './logo.svg'
 export { ReactComponent as CheckIcon } from './check.svg'
+export { ReactComponent as CirclecheckIcon } from './circlecheck.svg'
+export { ReactComponent as EyesolidIcon } from './eyesolid.svg'
+export { ReactComponent as EyeslashIcon } from './eyeslash.svg'

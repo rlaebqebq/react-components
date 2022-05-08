@@ -53,7 +53,7 @@ input::-webkit-contacts-auto-fill-button {
 
 input {
   background-color: transparent;
-  background-image: none !important;
+  background-image: none; //important 제거
   border: 0;
 }
 
@@ -73,3 +73,17 @@ input[type='file']::file-selector-button,
 button {
   color: initial;
 } // override safari default blue
+
+.App {
+  text-align: center;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* .container */
+.container {
+  position: relative;
+  width: 360px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 100px 0;
+}
