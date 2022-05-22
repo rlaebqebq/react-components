@@ -1,12 +1,14 @@
 import styles from './Toggle.module.scss'
 
-export default function Toggle() {
+const Toggle = () => {
   return (
-    <div className='container'>
+    <>
       <input type='checkbox' id='toggleTitle' />
-      <label htmlFor='toggleTitle' className={styles.toggleLabel}>
+      <label className={styles.toggleLabel} htmlFor='toggleTitle'>
         <div className={styles.toggleCheck} data-unchecked='기본' data-checked='상세' />
       </label>
-    </div>
+    </>
   )
 }
+
+export default Toggle

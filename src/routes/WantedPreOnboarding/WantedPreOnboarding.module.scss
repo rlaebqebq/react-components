@@ -1,4 +1,7 @@
-@use '/src/styles/constants/colors';
-@use '/src/styles/constants/levels';
-@use '/src/styles/mixins/flexbox';
-@use '/src/styles/mixins/position';
+.componentWrapper {
+  position: relative;
+  left: 50%;
+  width: 360px;
+  margin: 100px 0;
+  transform: translateX(-50%);
+}

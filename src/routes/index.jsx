@@ -1,9 +1,9 @@
 import styles from './Routes.module.scss'
 import WantedPreOnboarding from './WantedPreOnboarding'
 
-function App() {
+const App = () => {
   return (
-    <div className={styles.app}>
+    <div className={styles.appWrapper}>
       <WantedPreOnboarding />
     </div>
   )

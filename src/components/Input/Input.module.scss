@@ -2,53 +2,53 @@
 @use '/src/styles/mixins/flexbox';
 @use '/src/styles/mixins/position';
 
-/* Input.js */
-.checktrue svg {
-  fill: colors.$MINT;
-}
-
-svg {
-  fill: colors.$GRAYA;
-}
-
-.signup {
+.inputWrapper {
   padding: 15px 30px;
-  margin-top: 20px;
   background-color: colors.$GRAYE;
 
-  .signupTitle {
-    margin-bottom: 5px;
-    font-size: 0.6em;
-    font-weight: 400;
-    color: colors.$GRAY6;
+  .signup {
+    h5 {
+      margin-bottom: 5px;
+      font-size: 0.6em;
+      font-weight: 400;
+      color: colors.$GRAY6;
+    }
+
+    input {
+      width: 100%;
+      padding: 0 10px;
+      font-size: 0.8em;
+      line-height: 40px;
+      border: 1px solid colors.$GRAYD;
+      border-radius: 5px;
+    }
+
+    .checkImg {
+      position: relative;
+      right: 10px;
+      bottom: 28px;
+      float: right;
+      width: 15px;
+      height: 15px;
+
+      svg {
+        fill: colors.$GRAYA;
+      }
+    }
+
+    .checktrue {
+      svg {
+        fill: colors.$MINT;
+      }
+    }
+
+    .checkMsg {
+      font-size: 0.6em;
+      color: colors.$DEEPRED;
+    }
   }
 
-  input[id='email'],
-  input[id='password'] {
-    width: 100%;
-    padding: 0 10px;
-    font-size: 0.8em;
-    line-height: 40px;
-    border: 1px solid colors.$GRAYD;
-    border-radius: 5px;
-  }
-
-  .checkImg {
-    position: relative;
-    right: 10px;
-    bottom: 28px;
-    float: right;
-    width: 15px;
-    height: 15px;
-  }
-
-  .checkMsg {
-    font-size: 0.6em;
-    color: colors.$DEEPRED;
+  .signup + .signup {
+    padding-top: 20px;
   }
 }
-
-.signup + .signup {
-  margin-top: 0;
-}
-

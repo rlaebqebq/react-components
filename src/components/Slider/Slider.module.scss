@@ -32,9 +32,9 @@ input[type='range'] {
   left: 7px;
   width: calc(100% - 15px);
   height: 6px;
+  cursor: pointer;
   background: colors.$GRAYA;
   border-radius: 0;
-  cursor: pointer;
 }
 
 input[type='range']:focus {
@@ -45,49 +45,50 @@ input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 25px;
   height: 25px;
+  cursor: pointer;
   background: colors.$MINT;
   border: 3px solid colors.$WHITE;
   border-radius: 50%;
   box-shadow: 0 3px 3px colors.$GRAYE;
-  cursor: pointer;
 }
 
 input[type='range']::-moz-range-thumb {
   -webkit-appearance: none;
   width: 25px;
   height: 25px;
+  cursor: pointer;
   background: colors.$MINT;
   border: 3px solid colors.$WHITE;
   border-radius: 50%;
   box-shadow: 0 3px 3px colors.$GRAYE;
-  cursor: pointer;
 }
 
 .sliderUl {
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
   position: relative;
   top: -20px;
   z-index: -50;
-}
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
 
-ul li {
-  list-style: none;
-  background-color: colors.$GRAYA;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
+  li {
+    width: 15px;
+    height: 15px;
+    list-style: none;
+    background-color: colors.$GRAYA;
+    border-radius: 50%;
+  
     &.active {
       background-color: colors.$MINT;
     }
+  }
 }
 
-ul li.active {
+/* ul li.active {
   background-color: colors.$MINT;
   border: 1px solid red;
-}
+} */
 
 .buttonSetVolume {
   display: flex;

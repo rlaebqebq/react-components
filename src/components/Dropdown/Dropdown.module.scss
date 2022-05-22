@@ -1,0 +1,68 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/position';
+
+.dropdownWrapper {
+  height: 240px;
+  padding: 15px 30px;
+  background-color: colors.$GRAYE;
+
+  .dropdownButton {
+    position: relative;
+
+    input {
+      width: 100%;
+      padding: 0 10px;
+      font-size: 0.8em;
+      line-height: 40px;
+      color: colors.$GRAY6;
+      cursor: pointer;
+      background-color: colors.$WHITE;
+      border: 1px solid colors.$GRAYD;
+      border-radius: 5px;
+    }
+
+    .arrowdown {
+      @include position.posCenterY;
+      right: 10px;
+      width: 15px;
+      height: 15px;
+      fill: colors.$GRAYA;
+    }
+  }
+
+  .dropdownContent {
+    position: relative;
+    top: 3px;
+    display: none;
+    max-height: 160px;
+    overflow-y: auto;
+    border: 1px solid colors.$GRAYD;
+    border-radius: 5px 5px 0 0;
+
+    input {
+      width: 100%;
+      padding-left: 10px;
+      font-size: 0.8em;
+      line-height: 40px;
+      background-color: colors.$WHITE;
+      border-bottom: 1px solid colors.$GRAYD;
+    }
+
+    ul {
+      padding-left: 10px;
+      background-color: colors.$WHITE;
+
+      .dropdownContents {
+        button {
+          font-size: 0.8em;
+          line-height: 40px;
+          color: colors.$GRAYA;
+        }
+      }
+    }
+  }
+
+  .isOpen {
+    display: block;
+  }
+}

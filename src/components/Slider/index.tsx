@@ -1,7 +1,8 @@
-import { useState } from 'react'
 import styles from './Slider.module.scss'
+import { useState } from 'react'
 
-export default function Slider() {
+const Slider = () => {
+  const sliderScales = [1, 25, 50, 75, 100]
   const [volume, setVolume] = useState(1)
 
   const sliderIndx = Math.floor(volume / 25)
@@ -15,10 +16,12 @@ export default function Slider() {
     ulli[ulli.length - j - 1].classList.remove('active')
   }
 
-  const arr = [1, 25, 50, 75, 100]
+  const handleSlider = (e: React.MouseEvent<HTMLButtonElement>) => {
+    setVolume(Number(e.currentTarget.value))
+  }
 
   return (
-    <div className='container'>
+    <>
       <div className={styles.sliderNum}>
         <span>{volume}</span>
         <span>%</span>
@@ -30,7 +33,7 @@ export default function Slider() {
         step={1}
         value={volume}
         style={{
-          background: `linear-gradient(to right, #66c4cd 0%, #66c4cd ${volume}%, #aaaaaa ${volume}%, #aaaaaa 100%)`
+          background: `linear-gradient(to right, #66c4cd 0%, #66c4cd ${volume}%, #aaaaaa ${volume}%, #aaaaaa 100%)`,
         }}
         onChange={(event) => {
           setVolume(event.target.valueAsNumber)
@@ -46,12 +49,14 @@ export default function Slider() {
       </ul>
 
       <div className={styles.buttonSetVolume}>
-        {arr.map((numButton) => (
-          <button type='button' onClick={() => setVolume(numButton)} key={`numButton${numButton}`}>
-            {numButton}%
+        {sliderScales.map((sliderScale) => (
+          <button type='button' key={`sliderScale${sliderScale}`} value={sliderScale} onClick={handleSlider}>
+            {sliderScale}%
           </button>
         ))}
       </div>
-    </div>
+    </>
   )
 }
+
+export default Slider

@@ -1,8 +1,6 @@
 @use '/src/styles/constants/colors';
 @use '/src/styles/mixins/flexbox';
-@use '/src/styles/mixins/position';
 
-/* Toggle.js */
 input[type='checkbox'] {
   display: none;
   height: 36px;
@@ -30,11 +28,9 @@ input[type='checkbox'] {
 
 .toggleLabel {
   @include flexbox.flexbox(center center);
-  position: relative;
 
   .toggleCheck {
     position: relative;
-    top: 2px;
     box-sizing: content-box;
     flex: 0 0 360px;
     height: 36px;
@@ -49,7 +45,6 @@ input[type='checkbox'] {
     &::before,
     &::after {
       position: absolute;
-      top: 0;
       width: 180px;
       line-height: 36px;
     }
@@ -59,10 +54,9 @@ input[type='checkbox'] {
     }
 
     &::before {
-      z-index: 5;
       background: colors.$WHITE;
       border-radius: 40px;
-      transition: all ease 0.3s;
+      transition: all ease 0.2s;
     }
   }
 }
