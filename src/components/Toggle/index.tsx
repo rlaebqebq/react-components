@@ -1,4 +1,4 @@
-import styles from './Toggle.module.scss'
+import styles from './toggle.module.scss'
 
 const Toggle = () => {
   return (
