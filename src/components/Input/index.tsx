@@ -1,8 +1,8 @@
-import styles from './Input.module.scss'
 import { useEffect, useState } from 'react'
 
-import { CirclecheckIcon, EyesolidIcon, EyeslashIcon } from '../../assets/svgs'
-import cx from 'classnames'
+import { CirclecheckIcon, EyesolidIcon, EyeslashIcon } from 'assets/svgs'
+import { cx } from 'styles'
+import styles from './input.module.scss'
 
 const Input = () => {
   const [email, setEmail] = useState('')
