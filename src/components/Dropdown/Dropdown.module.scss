@@ -53,11 +53,11 @@
       background-color: colors.$WHITE;
 
       .dropdownContents {
-        button {
-          font-size: 0.8em;
-          line-height: 40px;
-          color: colors.$GRAYA;
-        }
+        width: 100%;
+        font-size: 0.8em;
+        line-height: 40px;
+        color: colors.$GRAYA;
+        text-align: left;
       }
     }
   }

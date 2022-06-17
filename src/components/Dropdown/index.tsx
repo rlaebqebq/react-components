@@ -1,9 +1,9 @@
-import styles from './Dropdown.module.scss'
-import { useRef, useState } from 'react'
 import { useClickAway } from 'react-use'
-import cx from 'classnames'
+import { useRef, useState } from 'react'
 
-import { ArrowdownIcon } from '../../assets/svgs'
+import { cx } from 'styles'
+import { ArrowdownIcon } from 'assets/svgs'
+import styles from './dropdown.module.scss'
 
 const searchArr = [
   'All Symbols',
@@ -52,8 +52,8 @@ const Dropdown = () => {
         <input type='text' placeholder='Search Symbol' onChange={handleKeyword} />
         <ul>
           {filter(searchArr).map((option) => (
-            <li key={`option-${option}`} className={styles.dropdownContents}>
-              <button type='button' value={option} onClick={handleDisplayValue}>
+            <li key={`option-${option}`}>
+              <button className={styles.dropdownContents} type='button' value={option} onClick={handleDisplayValue}>
                 {option}
               </button>
             </li>
