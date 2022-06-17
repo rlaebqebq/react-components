@@ -1,8 +1,8 @@
-import styles from './Tab.module.scss'
 import { useState } from 'react'
+import styles from './tab.module.scss'
 
 const Tab = () => {
-  const [moveLength, setLength] = useState(0)
+  const [moveLength, setMoveLength] = useState(0)
 
   const tabArray = [
     { id: 1, name: '고구마' },
@@ -11,24 +11,24 @@ const Tab = () => {
   ]
 
   const handleTabDecoration = (e: React.MouseEvent<HTMLInputElement>) => {
-    setLength((Number(e.currentTarget.value) - 1) * (360 / tabArray.length))
+    setMoveLength((Number(e.currentTarget.value) - 1) * (360 / tabArray.length))
   }
   return (
     <div className={styles.tabs}>
       {tabArray.map((tab) => (
-        <button type='button' key={tab.id}>
+        <button type='button' key={tab.id}  style={{ width: `calc(100% / ${tabArray.length})` }}>
           <input
             type='radio'
+            name='tabName'
             id={`tab${tab.id}`}
             value={tab.id}
             onClick={handleTabDecoration}
-            name='tabName'
             defaultChecked={`${tab.id}` === '1'}
           />
           <label htmlFor={`tab${tab.id}`}>{tab.name}</label>
         </button>
       ))}
-      <div className={styles.tabDecoration} style={{ transform: `translateX(${moveLength}px)` }} />
+      <div className={styles.tabDecoration} style={{ transform: `translateX(${moveLength}px)`, width: `calc(100% / ${tabArray.length})` }} />
     </div>
   )
 }

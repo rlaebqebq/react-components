@@ -4,8 +4,6 @@
   border-bottom: 2px solid colors.$GRAYD;
 
   button {
-    width: calc(100% / 3);
-
     input[type='radio'] {
       display: none;
 
@@ -27,7 +25,6 @@
   .tabDecoration {
     position: absolute;
     bottom: 0;
-    width: calc(100% / 3);
     height: 2px;
     background: colors.$MINT;
     transition: ease 0.2s;
