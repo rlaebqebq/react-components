@@ -1,28 +1,94 @@
-# 원티드 프리온보딩 코스 선발과제 [![Netlify Status](https://api.netlify.com/api/v1/badges/54edafd8-b580-4e5a-b8d2-fea6f8aaaaa2/deploy-status)](https://app.netlify.com/sites/rlaebqebq-wanted-pre-onboarding/deploys)
+# 🗂 원티드 프리온보딩 코스 선발과제 [![Netlify Status](https://api.netlify.com/api/v1/badges/54edafd8-b580-4e5a-b8d2-fea6f8aaaaa2/deploy-status)](https://app.netlify.com/sites/rlaebqebq-wanted-pre-onboarding/deploys)
 
-- '원티드 프리온보딩 코스' 선발과제입니다.<br />
-- Javascript 파일로 과제 제출했고 이후 Typescript로 리팩토링 중입니다.
-- 배포링크: https://rlaebqebq-wanted-pre-onboarding.netlify.app
-
-<br/>
-
-## 사용기술
-
-- HTML5
-- CSS3
-- SASS
-- React
-- Javascript  👉  TypeScript
+- **프로젝트 개요** <br/>
+Javascript에서 Typescript로 리팩토링한 '원티드 프리온보딩 코스' 선발과제입니다.
+- **배포 URL** <br/> https://rlaebqebq-wanted-pre-onboarding.netlify.app
 
 <br/>
 
-## 사용 라이브러리
-
-- classnames
+# 실행 방법
+1. git clone https://github.com/rlaebqebq/wanted_pre_onboarding.git
+2. cd wanted_pre_onboarding
+3. yarn install
+4. yarn start
 
 <br/>
 
-## 1. Toggle.js  👉  Toggle/index.tsx
+# 📁 폴더 구조
+<details>
+<summary>펼치기</summary>
+
+<br />📦src<br />
+ ┣ 📂assets<br />
+ ┃ ┗ 📂svgs<br />
+ ┃ ┃ ┣ 📜arrowdown.svg<br />
+ ┃ ┃ ┣ 📜check.svg<br />
+ ┃ ┃ ┣ 📜circlecheck.svg<br />
+ ┃ ┃ ┣ 📜eyeslash.svg<br />
+ ┃ ┃ ┣ 📜eyesolid.svg<br />
+ ┃ ┃ ┣ 📜index.js<br />
+ ┃ ┃ ┗ 📜logo.svg<br />
+ ┣ 📂components<br />
+ ┃ ┣ 📂Dropdown<br />
+ ┃ ┃ ┣ 📜dropdown.module.scs<br />s
+ ┃ ┃ ┗ 📜index.tsx<br />
+ ┃ ┣ 📂Input<br />
+ ┃ ┃ ┣ 📜index.tsx<br />
+ ┃ ┃ ┗ 📜input.module.scss<br />
+ ┃ ┣ 📂Slider<br />
+ ┃ ┃ ┣ 📜index.tsx<br />
+ ┃ ┃ ┗ 📜slider.module.scss<br />
+ ┃ ┣ 📂Tab<br />
+ ┃ ┃ ┣ 📜index.tsx<br />
+ ┃ ┃ ┗ 📜tab.module.scss<br />
+ ┃ ┗ 📂Toggle<br />
+ ┃ ┃ ┣ 📜index.tsx<br />
+ ┃ ┃ ┗ 📜toggle.module.scss<br />
+ ┣ 📂routes<br />
+ ┃ ┣ 📜index.jsx<br />
+ ┃ ┗ 📜routes.module.scss<br />
+ ┣ 📂styles<br />
+ ┃ ┣ 📂base<br />
+ ┃ ┃ ┣ 📜_fonts.scss<br />
+ ┃ ┃ ┣ 📜_more.scss<br />
+ ┃ ┃ ┗ 📜_reset.scss<br />
+ ┃ ┣ 📂constants<br />
+ ┃ ┃ ┗ 📜_colors.scss<br />
+ ┃ ┣ 📂mixins<br />
+ ┃ ┃ ┣ 📜_flexbox.scss<br />
+ ┃ ┃ ┗ 📜_position.scss<br />
+ ┃ ┣ 📜index.js<br />
+ ┃ ┗ 📜index.scss<br />
+ ┣ 📜index.tsx<br />
+ ┣ 📜logo.svg<br />
+ ┣ 📜react-app-env.d.ts<br />
+ ┣ 📜reportWebVitals.ts<br />
+ ┗ 📜setupTests.ts<br />
+
+</details>
+
+<br/>
+
+# 🔨 기술 스택
+<div align="left">
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/>
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/>
+<img src="https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=Sass&logoColor=white"/>
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=TypeScript&logoColor=white"/>
+<img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=white"/>
+</div>
+<br/>
+
+|라이브러리|내용|버전|
+|:---:|:---:|:---:|
+| classnames | styles 관련 | 2.3.1 |
+| react-use | react 편의 | 17.4.0 |
+
+<br/>
+
+# 🏞 기능 설명
+
+### 1. Toggle
 <img src="https://user-images.githubusercontent.com/50236673/164514914-d73feba8-ff90-4b70-8186-48bae248b17e.gif" width="50%" height="50%">   
 
 - [x] 핵심 요소 : 버튼을 누를 때마다 선택된 항목이 변한다.
@@ -55,7 +121,7 @@
 
 <br />
 
-## 2. Tab.js  👉  Tab/index.tsx
+### 2. Tab
 <img src="https://user-images.githubusercontent.com/50236673/164514912-34169e84-847e-4821-a642-d88c6bd88e13.gif" width="50%" height="50%"> 
 
 - [x] 핵심 요소 : 버튼을 누를 때마다 선택된 탭이 변한다.
@@ -79,7 +145,7 @@
 
 <br />
 
-## 3. slider.js  ---Refactoring(50%)--->  Slider/index.tsx
+### 3. Slider
 <img src="https://user-images.githubusercontent.com/50236673/164514903-861e1986-a000-49fe-87c1-e1102fab47c8.gif" width="50%" height="50%"> 
 
 - [x] 핵심 요소 : 슬라이더를 움직이면 상단의 값이 자동으로 변한다.
@@ -111,7 +177,7 @@
 
 <br />
 
-## 4. input.js  👉  Input/index.tsx
+### 4. input
 <img src="https://user-images.githubusercontent.com/50236673/164514889-5ee69745-9c09-483b-904e-1b0d8f33885b.gif" width="50%" height="50%"> 
 
 - [x] 핵심 요소 : 인풋창에 이메일과 비밀번호 입력이 가능하다
@@ -149,7 +215,7 @@
 
 <br />
 
-## 5. Dropdown.js  👉  Dropdown/index.tsx
+### 5. Dropdown
 <img src="https://user-images.githubusercontent.com/50236673/164514876-a185bf32-62d6-4ac9-9047-37b0ca817833.gif" width="50%" height="50%"> 
 
 - [x] 핵심 요소 : 드롭다운을 누르면 선택 창이 펼쳐지고, 아무거나 골라 클릭하면 선택된 항목으로 변경됨
