@@ -1,56 +1,65 @@
-import styles from './Slider.module.scss'
 import { useState } from 'react'
+import { cx } from 'styles'
+import styles from './slider.module.scss'
+
+interface IProps {
+  standard: number
+  value: number
+}
+
+const Indicator = ({ standard, value }: IProps) => {
+  const checkValue = standard <= value
+  return <li className={cx({ [styles.active]: checkValue }, styles.indicator)} />
+}
 
 const Slider = () => {
   const sliderScales = [1, 25, 50, 75, 100]
   const [volume, setVolume] = useState(1)
 
-  const sliderIndx = Math.floor(volume / 25)
-  const ulli = document.getElementsByClassName('sliderLi')
-
-  for (let i = 0; i < sliderIndx; i += 1) {
-    ulli[i].classList.add('active')
-  }
-
-  for (let j = 0; j < ulli.length - sliderIndx; j += 1) {
-    ulli[ulli.length - j - 1].classList.remove('active')
-  }
-
   const handleSlider = (e: React.MouseEvent<HTMLButtonElement>) => {
     setVolume(Number(e.currentTarget.value))
   }
 
+  const handleRange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setVolume(e.currentTarget.valueAsNumber)
+  }
+
   return (
     <>
-      <div className={styles.sliderNum}>
+      <p className={styles.sliderNum}>
         <span>{volume}</span>
         <span>%</span>
-      </div>
+      </p>
+      <div className={styles.sliderWrapper}>
       <input
-        type='range'
-        min={1}
-        max={100}
-        step={1}
-        value={volume}
-        style={{
-          background: `linear-gradient(to right, #66c4cd 0%, #66c4cd ${volume}%, #aaaaaa ${volume}%, #aaaaaa 100%)`,
-        }}
-        onChange={(event) => {
-          setVolume(event.target.valueAsNumber)
-        }}
-      />
-
-      <ul className={styles.sliderUl}>
-        <li className='active' />
-        <li className='sliderLi' />
-        <li className='sliderLi' />
-        <li className='sliderLi' />
-        <li className='sliderLi' />
-      </ul>
-
+          type='range'
+          min={1}
+          max={100}
+          step={1}
+          value={volume}
+          className={styles.sliderHandle}
+          onChange={handleRange}
+        />
+        <input
+          type='range'
+          min={1}
+          max={100}
+          step={1}
+          value={volume}
+          className={styles.sliderBar}
+          style={{
+            background: `linear-gradient(to right, #66c4cd 0%, #66c4cd ${volume}%, #aaaaaa ${volume}%, #aaaaaa 100%)`,
+          }}
+        />
+        <ul className={styles.indicators}>
+          {sliderScales.map((sliderScale) => (
+            <Indicator key={`indicator-${sliderScale}`} standard={sliderScale} value={volume} />
+          ))}
+        </ul>
+      </div>
       <div className={styles.buttonSetVolume}>
         {sliderScales.map((sliderScale) => (
-          <button type='button' key={`sliderScale${sliderScale}`} value={sliderScale} onClick={handleSlider}>
+          <button type='button' key={`sliderScale-${sliderScale}`} value={sliderScale} onClick={handleSlider}>
             {sliderScale}%
           </button>
         ))}

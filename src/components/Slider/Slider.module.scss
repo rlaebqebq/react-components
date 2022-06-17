@@ -1,12 +1,9 @@
 @use '/src/styles/constants/colors';
 @use '/src/styles/mixins/flexbox';
-@use '/src/styles/mixins/position';
 
-/* Slider.js */
 .sliderNum {
   position: relative;
-  width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   line-height: 50px;
   text-align: right;
   background-color: colors.$GRAYE;
@@ -25,85 +22,104 @@
   }
 }
 
-input[type='range'] {
-  -webkit-appearance: none;
+.sliderWrapper {
   position: relative;
-  top: -7px;
-  left: 7px;
-  width: calc(100% - 15px);
-  height: 6px;
-  cursor: pointer;
-  background: colors.$GRAYA;
-  border-radius: 0;
-}
+  top: -13px;
 
-input[type='range']:focus {
-  outline: none;
-}
+  &::before,
+  &::after {
+    position: absolute;
+    top: -10px;
+    z-index: 5;
+    width: 14px;
+    height: 10px;
+    content: '';
+    background-color: colors.$WHITE;
+  }
 
-input[type='range']::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-  background: colors.$MINT;
-  border: 3px solid colors.$WHITE;
-  border-radius: 50%;
-  box-shadow: 0 3px 3px colors.$GRAYE;
-}
+  &::before {
+    left: 0;
+  }
 
-input[type='range']::-moz-range-thumb {
-  -webkit-appearance: none;
-  width: 25px;
-  height: 25px;
-  cursor: pointer;
-  background: colors.$MINT;
-  border: 3px solid colors.$WHITE;
-  border-radius: 50%;
-  box-shadow: 0 3px 3px colors.$GRAYE;
-}
+  &::after {
+    right: 0;
+  }
 
-.sliderUl {
-  position: relative;
-  top: -20px;
-  z-index: -50;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0;
+  input[type='range'] {
+    -webkit-appearance: none;
+    position: absolute;
+    top: -7px;
+    left: 7px;
+    width: calc(100% - 15px);
+    height: 6px;
+  }
 
-  li {
-    width: 15px;
-    height: 15px;
-    list-style: none;
-    background-color: colors.$GRAYA;
+  .sliderBar {
+    background: colors.$GRAYA;
+    border-radius: 0;
+  }
+
+  .sliderBar:focus {
+    outline: none;
+  }
+
+  .sliderHandle {
+    -webkit-appearance: none;
+    z-index: 20;
+    cursor: pointer;
+  }
+
+  .sliderHandle::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    background: colors.$MINT;
+    border: 3px solid colors.$WHITE;
     border-radius: 50%;
-  
-    &.active {
-      background-color: colors.$MINT;
+    box-shadow: 0 3px 3px colors.$GRAYE;
+  }
+
+  .sliderHandle::-moz-range-thumb {
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    background: colors.$MINT;
+    border: 3px solid colors.$WHITE;
+    border-radius: 50%;
+    box-shadow: 0 3px 3px colors.$GRAYE;
+  }
+
+  .indicators {
+    @include flexbox.flexbox($jc: between);
+    position: relative;
+    top: -12px;
+    width: 100%;
+    padding: 0 13px;
+
+    .indicator {
+      z-index: 10;
+      width: 15px;
+      height: 15px;
+      list-style: none;
+      background-color: colors.$GRAYA;
+      border-radius: 50%;
+
+      &.active {
+        background-color: colors.$MINT;
+      }
     }
   }
 }
 
-/* ul li.active {
-  background-color: colors.$MINT;
-  border: 1px solid red;
-} */
-
 .buttonSetVolume {
-  display: flex;
-  justify-content: space-between;
+  @include flexbox.flexbox($jc: between);
   width: 100%;
 
   button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
     width: 40px;
     padding: 3px;
     font-size: 0.8em;
     color: colors.$GRAYA;
-    cursor: pointer;
     background-color: colors.$GRAYE;
     border: none;
     border-radius: 5px;
