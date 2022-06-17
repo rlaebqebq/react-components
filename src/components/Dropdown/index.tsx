@@ -52,8 +52,8 @@ const Dropdown = () => {
         <input type='text' placeholder='Search Symbol' onChange={handleKeyword} />
         <ul>
           {filter(searchArr).map((option) => (
-            <li key={`option-${option}`}>
-              <button className={styles.dropdownContents} type='button' value={option} onClick={handleDisplayValue}>
+            <li key={`option-${option}`} className={styles.dropdownContents} >
+              <button type='button' value={option} onClick={handleDisplayValue}>
                 {option}
               </button>
             </li>
